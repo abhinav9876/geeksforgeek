@@ -1,5 +1,5 @@
 
-class myclasss():
+class z_algo():
     def __init__(self,ss,pattern):
         self.search(ss,pattern)
     def z_arr(self,ss):
