@@ -1,5 +1,6 @@
 
 import logging
+__all__=['searching']
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 formatter = logging.Formatter('%(asctime)s:%(name)s:%(message)s')
@@ -10,6 +11,6 @@ logger.addHandler(stream_handler)
 logger.addHandler(stream_handler)
 try:
     #import collection
-    import searching
+    from search_package.searching import *
 except:
     logger.exception('something wrong happened ')

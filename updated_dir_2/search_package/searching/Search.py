@@ -1,4 +1,4 @@
-import singleton
+from search_package.searching.singleton import *
 from abc import ABCMeta,abstractmethod
 import logging
 logger = logging.getLogger(__name__)
@@ -9,23 +9,26 @@ stream_handler.setFormatter(formatter)
 logger.addHandler(stream_handler)
 
 logger.addHandler(stream_handler)
-@singleton
+
+
+
+#@singleton
 class search(metaclass=ABCMeta):
-    @abstractmethod
-    def search_string(String,pattern):
+    #@abstractmethod
+    def search_string(self,String,pattern):
         try:
             ll=[]
-            concate=pattern+'$'+ss
+            concate=pattern+'$'+String
             z=self.__z_arr(concate)
             for i in range(len(z)):
                 if z[i]==len(pattern):
-                    ll.append(str("pattern found at index ",i-len(pattern)-1))
+                    ll.append(str("pattern found at index ")+str(i-len(pattern)-1))
 
         except:
-                        logger.exception('something wrong happened in searching position of pattern in string'))
+                        logger.exception('something wrong happened in searching position of pattern in string')
         else:
             return ll
-    @abstractmethod
+    #@abstractmethod
     def __z_arr(self,ss):
         try:
             l=0
